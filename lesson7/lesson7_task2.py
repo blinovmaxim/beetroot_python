@@ -12,5 +12,5 @@ prices = {
 }
 total_price=0
 for item in stock:
-    total_price=total_price+stock[item]*prices[item]
-print(f"Total price",total_price)
+    total_price+=stock[item]*prices[item]
+print("Total price",total_price)
