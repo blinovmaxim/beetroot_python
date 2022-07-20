@@ -26,19 +26,3 @@ if __name__ == '__main__':
 
 
 
-# def test(name):
-# .split('\n')
-# .rstrip('\n')
-#  liness=0
-#         for liness in f:
-#             symbols=len(f.read().split('\n'))
-
-# filename="C:\python\lesson9\lesson9_task3\primer.txt"
-# with open(filename, 'r') as file:
-#         lines = len(file.readlines())
-# print('Total Number of lines:', lines)
-
-# from importlib.resources import path
-# import os
-# path=os.getcwd()
-# print(path)
