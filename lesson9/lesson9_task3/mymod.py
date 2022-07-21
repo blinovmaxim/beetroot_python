@@ -1,6 +1,8 @@
 import os
 import sys
 
+from pyparsing import line
+
 
 
 def count_lines(name):
@@ -11,18 +13,17 @@ def count_lines(name):
     print('Total Number of lines:', lines)
 
 def count_chars(name): 
-    with open(name, 'r') as f:
-        
-        symbols=len(f.read())
-        
-    print('Total chars of lines:', symbols)
+    with open(name, 'r') as f:                             
+        while True:                         
+            symbols=len((f.readline()).rstrip('\n'))
+            if not symbols:
+                break
+            print('Total chars of line:', symbols)
 
 def  test(name):
     count_lines(name)
     count_chars(name)
-if __name__ == '__main__':
-    import sys
-    test(sys.argv[1])
+    
 
-
+test('example.txt')
 
