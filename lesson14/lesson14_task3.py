@@ -1,10 +1,11 @@
-
-from multiprocessing.sharedctypes import Value
-
-
 def arg_rules(type_: type, max_length: int, contains: list):
-    def wrapper(func):
-        def validate(value,*args,**kwargs):
+    def wrapper(func,name):
+        
+        def validate(value):
+            stroka=func(name)
+            for i in range(len(contains)):
+                if stroka.find(contains[i]) != -1:
+                    print(f' include required part: "{contains[i]}"!')
             if type_ == str:
                 print("type is str?: ",True)
             else:
@@ -14,7 +15,8 @@ def arg_rules(type_: type, max_length: int, contains: list):
                     raise ValueError("Please consider Max length!")
             print("Length is <=15: ",True)
             
-            
+                    
+                          
         return validate
     return wrapper
     
@@ -29,4 +31,4 @@ def create_slogan(name: str) -> str:
 
 # assert create_slogan('johndoe05@gmail.com') is False
 # assert create_slogan('S@SH05') == 'S@SH05 drinks pepsi in his brand new BMW!'
-create_slogan("Maxim111105@1")
+create_slogan("Ma5@0wrwr")
